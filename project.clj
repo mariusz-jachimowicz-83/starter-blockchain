@@ -18,11 +18,11 @@
                  [re-frame "0.10.5"] ;; ui framework
 
                  [mount "0.1.11"]
-                 [cljs-web3 "0.19.0-0-11"] ;; cljs web3 wrapper
-                 [cljsjs/zero-ex "0.21.0-0"]]
+                 [cljs-web3 "0.19.0-0-11"]]
 
   :plugins [[duct/lein-duct "0.10.6"]
-            [lein-cljsbuild "1.1.6"]]
+            [lein-cljsbuild "1.1.6"]
+            [lein-npm "0.6.2"]]
 
   :main ^:skip-aot starter-blockchain.main
 
@@ -32,8 +32,9 @@
   :resource-paths ["resources" "target/resources"]
   :prep-tasks     ["javac" "compile" ["run" ":duct/compiler"]]
 
-  :npm {:dependencies [[web3 "0.19.0"]
-                       [ganache-core "2.0.2"]]
+  :npm {:dependencies [[web3         "0.19.0"]
+                       [ganache-core "2.0.2"]
+                       ["0x.js"      "0.36.3"]]
         :devDependencies [[ws "2.0.1"]]}
 
   :profiles
@@ -64,6 +65,8 @@
    [{:id "dev"
      :source-paths ["src/cljs" "src/cljc" "dev/src/cljs"]
      :compiler {:main starter-blockchain.dev
+                :foreign-libs [{:file "resources/starter_blockchain/libs/zero-ex-0.36.3.js"
+                                :provides ["ZeroEx"]}]
                 :output-to "resources/starter_blockchain/public/js/compiled/app/app.js"
                 :output-dir "resources/starter_blockchain/public/js/compiled/app/out"
                 :asset-path "js/compiled/app/out"
