@@ -1,0 +1,23 @@
+# Duct locals
+.dir-locals.el
+dev/resources/local.edn
+dev/src/clj/local.clj
+dev/src/local.clj
+profiles.clj
+
+# compiled cljs
+resources/starter_blockchain/public/js/compiled/
+
+/target
+/logs
+/classes
+/checkouts
+pom.xml
+pom.xml.asc
+*.jar
+*.class
+/.lein-*
+/.nrepl-port
+/.dir-locals.el
+
+figwheel_server.log

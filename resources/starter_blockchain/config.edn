@@ -1,0 +1,14 @@
+{:duct.core/project-ns  starter-blockchain
+ :duct.core/environment :production
+
+ :duct.module/logging {}
+ :duct.module.web/site {}
+
+ :starter-blockchain.handler/web {}
+
+ :duct.router/cascading [#ig/ref :starter-blockchain.handler/web]
+
+ :duct.server.http/jetty
+ {:port #duct/env ["PORT" Int :or 5000]
+  :handler #ig/ref :duct.core/handler
+  :logger  #ig/ref :duct/logger}}
