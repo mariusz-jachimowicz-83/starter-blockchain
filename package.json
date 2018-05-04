@@ -1,0 +1,30 @@
+{
+  "scripts": {
+    "watch":      "shadow-cljs watch app",
+    "watch-test": "shadow-cljs watch browser-test",
+    "test":       "shadow-cljs compile karma-test && karma start --single-run",
+    "download_snapshot": "download --extract --strip 1 --out 0x_testrpc_snapshot ${npm_package_config_snapshot_url}",
+    "testrpc": "testrpc -p 8545 --networkId 50 --db ./0x_testrpc_snapshot -m \"${npm_package_config_mnemonic}\""
+  },
+  "config": {
+    "mnemonic": "concert load couple harbor equip island argue ramp clarify fence smart topic",
+    "snapshot_url": "https://s3.amazonaws.com/testrpc-shapshots/07d00cc515e0f9825b81595386b358593b7a3d6f.zip"
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.3.0",
+    "download-cli": "^1.0.5",
+    "ethereumjs-testrpc": "^6.0.3"
+  },
+  "dependencies": {
+    "create-react-class": "^15.6.3",
+    "react":     "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-flip-move": "^3.0.1",
+    "react-highlight.js": "^1.0.7",
+    "web3": "0.19.0",
+    "0x.js": "0.33.0",
+    "@0xproject/connect": "^0.6.2",
+    "@0xproject/tslint-config": "^0.4.10",
+    "@0xproject/utils": "^0.4.0"
+  }
+}

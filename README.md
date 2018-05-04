@@ -2,7 +2,30 @@
 
 Initial prototype for working with blockchains.  
 
-## Developing
+### Pre
+
+* install Java
+* install Leiningen
+* install node.js + npm + yarn
+
+## Develop
+
+```bash
+# install deps
+yarn 
+
+# == tab-1 - run testRPC node
+# download latest TestRPC 0x snapshot with all the 0x smart contracts pre-deployed
+yarn download_snapshot
+
+# launch TestRPC test net for development
+yarn testrpc
+
+#== tab-2
+yarn watch
+```
+
+## Develop (old, based on ClojureScript compiler and Figwheel)
 
 ### Setup
 

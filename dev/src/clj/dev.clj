@@ -7,14 +7,18 @@
             [duct.core :as duct]
             [duct.core.repl :as duct-repl]
             [eftest.runner :as eftest]
-            [figwheel-sidecar.repl-api :as figwheel-repl]
+            #_[figwheel-sidecar.repl-api :as figwheel-repl]
             [integrant.core :as ig]
             [integrant.repl :refer [clear halt go init prep reset]]
-            [integrant.repl.state :refer [config system]]))
+            [integrant.repl.state :refer [config system]]
 
-(def ui        figwheel-repl/start-figwheel!)
-(def ui-stop   figwheel-repl/stop-figwheel!)
-(def cljs-repl figwheel-repl/cljs-repl)
+            [shadow.cljs.devtools.api :as dapi]))
+
+;; (def ui        figwheel-repl/start-figwheel!)
+;; (def ui-stop   figwheel-repl/stop-figwheel!)
+;; (def cljs-repl figwheel-repl/cljs-repl)
+
+(defn ui-repl [] (dapi/nrepl-select :app))
 
 (duct/load-hierarchy)
 
@@ -37,11 +41,11 @@
 
   (go)
 
-  (ui)
+  ;; (ui)
 
-  (cljs-repl)
+  ;; (cljs-repl)
 
-  (ui-stop)
+  ;; (ui-stop)
 
   (halt)
 

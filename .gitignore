@@ -21,3 +21,6 @@ pom.xml.asc
 /.dir-locals.el
 
 figwheel_server.log
+.shadow-cljs/
+0x_testrpc_snapshot/
+node_modules/

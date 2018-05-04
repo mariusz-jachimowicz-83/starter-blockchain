@@ -1,0 +1,13 @@
+{:lein  {:profile "cljs"}
+:nrepl  {:port 8230}
+:builds {:app
+         {:target           :browser
+          :modules          {:base {:entries [starter-blockchain.core]}}
+          :output-dir       "resources/starter_blockchain/public/js/compiled/app/out"
+          :asset-path       "js/compiled/app/out"
+          :compiler-options {:externs ["zero-ex.ext.js"]}
+          :devtools {:http-root    "resources/starter_blockchain/public"
+                     :http-handler shadow.http.push-state/handle
+                     :http-port    8280
+                     :after-load   starter-blockchain.core/mount-root
+                     :preloads     [devtools.preload re-frisk.preload]}}}}
