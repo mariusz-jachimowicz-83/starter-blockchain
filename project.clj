@@ -20,7 +20,8 @@
                  [com.cemerick/url "0.1.1"]            ;; work with urls
                  [re-frame "0.10.5"] ;; ui framework
                  [mount "0.1.11"]
-                 [cljs-web3 "0.19.0-0-11"]]
+                 [cljs-web3 "0.19.0-0-11"]
+                 [funcool/promesa "1.9.0"]]
 
   :plugins [[duct/lein-duct "0.10.6"]
             [lein-cljsbuild "1.1.6"]]

@@ -11,6 +11,7 @@
   (let [state (re-frame/subscribe [:app])]
     (fn [] [panels/main-panel @state])))
 
+
 (defn mount-root []
   (re-frame/clear-subscription-cache!)
   (.clear js/console)

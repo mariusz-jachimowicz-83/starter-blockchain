@@ -7,6 +7,7 @@ Initial prototype for working with blockchains.
 * install Java
 * install Leiningen
 * install node.js + npm + yarn
+* install node-gyp `apt-get install node-gyp` if there are errors
 
 ## Develop
 
